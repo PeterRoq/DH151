@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
+    <script src="css/papaparse.min.js"></script>
+
 	<title>Peter's Places</title>
 	<meta charset="utf-8" />
 
@@ -35,10 +37,14 @@
 
 // Global variables
 let map;
+// path to csv data
+let path = "data/dunitz.csv";
+
 
 // initialize
 $( document ).ready(function() {
     createMap();
+    readCSV();
 });
 
 // create the map
@@ -49,6 +55,22 @@ function createMap(){
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 	}).addTo(map);
 }
+
+// function to read csv data
+function readCSV(){
+	Papa.parse(path, {
+		header: true,
+		download: true,
+		complete: function(data) {
+			console.log(data);
+			
+			// map the data
+			mapCSV(data);
+
+		}
+	});
+}
+
 
 </script>
     
