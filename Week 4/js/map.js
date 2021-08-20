@@ -3,13 +3,13 @@ let map;
 let lat = 0;
 let lon = 0;
 let zl = 3;
-// path to csv data
-let path = "data/SystemCoordinates.csv";
+let path = "https://raw.githubusercontent.com/PeterRoq/DH151/main/Week%204/data/dunitz.csv";
+
 
 
 // initialize
 $( document ).ready(function() {
-	createMap(Lat,Long,zl);
+	createMap(lat,lon,zl);
 	readCSV(path);
 });
 
