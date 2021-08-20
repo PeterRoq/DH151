@@ -1,4 +1,4 @@
-ody,html {
+body,html {
 	margin:0;
 	height:100%;
 	width:100%;
@@ -8,15 +8,17 @@ ody,html {
 	height: 100%;
 }
 
+
 body {
 	display: grid;
 	grid-template-rows: 80px 1fr 50px;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 30% 80%;
 	grid-template-areas: 
 	"header header"
 	"sidebar content"
 	"footer footer";
 }
+
 
 .header {
 	grid-area: header;
