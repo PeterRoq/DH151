@@ -3,7 +3,7 @@ let map;
 let lat = 0;
 let lon = 0;
 let zl = 3;
-let path = "https://raw.githubusercontent.com/PeterRoq/DH151/main/Week%204/data/dunitz.csv";
+let path = "https://raw.githubusercontent.com/PeterRoq/DH151/main/Week%204/data/SystemCoordinates.csv";
 
 
 
