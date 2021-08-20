@@ -43,7 +43,7 @@ let data = [
         'description':"Los Angeles is a sprawling Southern California city and the center of the nation’s film and television industry. Near its iconic Hollywood sign, studios such as Paramount Pictures, Universal and Warner Brothers offer behind-the-scenes tours. On Hollywood Boulevard, TCL Chinese Theatre displays celebrities’ hand- and footprints, the Walk of Fame honors thousands of luminaries and vendors sell maps to stars’ homes. ― Google"
     },
 ]
-
+let csvpath:
 
 let map = L.map('map').setView([0,0], 3);
 
@@ -70,10 +70,10 @@ myMarkers.addTo(map)
 function flyToIndex(index){
 	map.flyTo([data[index].lat,data[index].lon],12)
 }
-
-  // define layers
+// define layers
 let layers = {
 	"My Markers": myMarkers
+
 }
 
 

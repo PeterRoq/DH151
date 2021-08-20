@@ -19,10 +19,19 @@ body {
 
 .header {
 	grid-area: header;
-	padding:10px;
+	
+	top: 10px;
+	left: 55px;
+	margin-top:0;
+	padding: 10px; 15px;
 	background-color: rgb(73, 88, 103);
+	color: white;
+	font-size: 2em;
+	padding:10px;
 	color: rgb(247, 247, 255);
 	font-size: 2em;
+	border: 1px;
+	border-radius: 3px;
 }
 
 .sidebar {

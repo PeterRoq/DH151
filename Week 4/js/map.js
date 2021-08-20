@@ -3,10 +3,14 @@ let map;
 let lat = 0;
 let lon = 0;
 let zl = 3;
+// path to csv data
+let path = "data/SystemCoordinates.csv";
+
 
 // initialize
 $( document ).ready(function() {
-	createMap(lat,lon,zl);
+	createMap(Lat,Long,zl);
+	readCSV(path);
 });
 
 // create the map
@@ -16,4 +20,19 @@ function createMap(lat,lon,zl){
 	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 	}).addTo(map);
+}
+
+// function to read csv data
+function readCSV(path){
+	Papa.parse(path, {
+		header: true,
+		download: true,
+		complete: function(data) {
+			console.log(data);
+			
+			// map the data
+			mapCSV(data);
+			
+		}
+	});
 }
