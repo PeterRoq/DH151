@@ -30,7 +30,8 @@ function readCSV(path){
 		complete: function(data) {
 			console.log(data);
             csvdata = data;
-            mapCSV();
+
+            mapCSV(data);
 			
 		}
 	});
@@ -43,15 +44,16 @@ function mapCSV(){
 		if(item.Lat != undefined){
 
 			// Lat exists, so create a circleMarker for each country
-
+            let marker = L.circlemarker([item.Lat,item.Long],cirlceoptions)
 
 			// add the circleMarker to the featuregroup
-
+            markers.addLayer(marker)
 		} // end if
-	});
-}
+	})
 
 	// add the featuregroup to the map
-
+            markers.addTo(map)
 
 	// fit the circleMarkers to the map view
+            map.fitBounds(markers.getBounds())
+}
