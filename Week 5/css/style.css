@@ -33,16 +33,6 @@ body {
 	background-color: #555;
 	overflow: auto;
 }
-
-.content {
-	grid-area: content;
-}
-
-.footer {
-	grid-area: footer;
-	padding:10px;
-	background-color: rgb(175, 175, 175);
-}
 .sidebar-item {	/* border: 1px solid gray; */
 	padding: 2px;	/* background-color: #333; */
 	float:left;
@@ -52,4 +42,14 @@ body {
 }
 .sidebar-item:hover {
 	background-color: rgb(255, 0, 0);
+}
+
+.content {
+	grid-area: content;
+}
+
+.footer {
+	grid-area: footer;
+	padding:10px;
+	background-color: rgb(175, 175, 175);
 }
