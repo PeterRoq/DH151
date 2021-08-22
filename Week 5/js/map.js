@@ -33,7 +33,7 @@ function readCSV(path){
             csvdata = data;
 
             //get the last date and put it in the global variable 
-            lastdate = ccsvdata.meta.fields[csvdata.meta.fields.length-1];
+            lastdate = csvdata.meta.fields[csvdata.meta.fields.length-1];
 
             mapCSV(lastdate);
 			
@@ -50,7 +50,7 @@ function mapCSV(date){
 		// check to make sure the Latitude column exists
 		if(item.Lat != undefined){
             let circleOptions = {
-            radius: item[date]/32000, //divide by a higher number to get usable circle sizes
+            radius: getRadiusSize(item[date]),
             weight: 1,
             color: 'white',
             fillColor: 'red',
@@ -71,4 +71,22 @@ function mapCSV(date){
 
 	// fit the circleMarkers to the map view
             map.fitBounds(markers.getBounds())
+}
+function getRadiusSize(value){
+	// calculate the min/max values in the data, 
+	// and create a range so that the largest circle size is 100
+	
+}
+function createSidebarButtons(){
+
+//put all available data into an array
+// using slice to remove first 4 columns which are not dates
+let dates = csvdata.meta.fields.slice(4)
+
+//loop through each date and create a hover-able button
+dates.forEach(function(item,index){
+    $('.sidebar').append(`<span onmouseover="mapCSV('${item}')" class="sidebar-item" title="${item}">●</span>`)
+})
+
+
 }
