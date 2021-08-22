@@ -73,9 +73,21 @@ function mapCSV(date){
             map.fitBounds(markers.getBounds())
 }
 function getRadiusSize(value){
+
+    let values = [];
 	// calculate the min/max values in the data, 
+    csvdata.data.forEach(function(item,index){
+		if(item[lastdate] != undefined){
+			values.push(Number(item[lastdate]))
+		}
+	})
+    let min = Math.min(...values);
+    let max = Math.max(...values)
+
+
 	// and create a range so that the largest circle size is 100
-	
+	perpixel = max/100;
+	return value/perpixel
 }
 function createSidebarButtons(){
 
