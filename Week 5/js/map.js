@@ -7,6 +7,7 @@ let path = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/css
 let markers = L.featureGroup();
 let csvdata;
 let lastdate;
+let url = "https://coordinates.native-land.ca/indigenousTerritories.json"
 
 // initialize
 $( document ).ready(function() {
@@ -36,6 +37,8 @@ function readCSV(path){
             lastdate = csvdata.meta.fields[csvdata.meta.fields.length-1];
 
             mapCSV(lastdate);
+            // create sidebar buttons
+			createSidebarButtons();
 			
 		}
 	});
@@ -102,3 +105,4 @@ dates.forEach(function(item,index){
 
 
 }
+
