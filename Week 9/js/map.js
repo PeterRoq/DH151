@@ -4,7 +4,7 @@ let lat = 39;
 let lon = -98;
 let zl = 4;
 
-let geojsonPath = 'data/MergedData.geojson';
+let geojsonPath = 'data/merge_LA Counrty_FirstMerge.geojson';
 let geojson_data;
 let geojson_layer;
 
@@ -12,7 +12,7 @@ let brew = new classyBrew();
 let legend = L.control({position: 'bottomright'});
 let info_panel = L.control();
 
-let fieldtomap = 'POPULATION';
+let fieldtomap = 'Population';
 
 // initialize+
 $( document ).ready(function() {
