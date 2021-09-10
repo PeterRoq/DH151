@@ -4,7 +4,7 @@ let lat = 39;
 let lon = -98;
 let zl = 4;
 
-let geojsonPath = 'data/merged.geojson.txt';
+let geojsonPath = 'https://raw.githubusercontent.com/PeterRoq/DH151/main/Week%209/data/LAMap3.json';
 let geojson_data;
 let geojson_layer;
 
